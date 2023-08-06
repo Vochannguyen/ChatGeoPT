@@ -4,18 +4,14 @@ import requests
 import streamlit as st
 import tiktoken
 import streamlit_folium
-
+import requests
 import os
 
-
-# Define the Overpass API endpoint URL
-OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
-
 # Set the OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_key = os.environ.get("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")
 
 # Chat template string, to be used for generating Overpass API queries
-CHAT_TEMPLATE = """Assistant is an expert OpenStreetMap Overpass API assistant.
+CHAT_TEMPLATE = """Assistant is an expert Geo-Coder assistant.
 
 For each question that the user supplies, the assistant will reply with:
 (1) A statement consenting to help.
@@ -46,11 +42,11 @@ def query_overpass(query):
 # Define the Streamlit app
 def main():
     # Set the app title and description
-    st.set_page_config(layout="wide", page_title="OSM Overpass Query App", page_icon=":earth_africa:")
-    st.title("Chat:earth_africa:")
-    st.write("Hello! :wave: I'm Chat:earth_africa:, a Geospatial AI assistant. For any question you ask in the textbox below, "
-             "I'll generate an OpenStreetMap Overpass query to answer your question, and plot the results on a map. "
-             "I'll remember our conversation, so feel free to ask follow ups. I'm also a geospatial themed joke and pun expert. :smile:")
+    st.set_page_config(layout="wide", page_title="AskAT&TGeo", page_icon=":earth_africa:")
+    st.title("AskAT&TGeo:earth_africa:")
+    st.write("Hello! I'm a Geospatial AI assistant. For any question you ask in the textbox below, "
+             "I'll generate an Hexagon query to answer your question, and plot the results on a map. "
+             "I'll remember our conversation, so feel free to ask follow ups. :smile:")
 
     # Define the layout of the app
     col1, col2 = st.columns([1, 1])
